@@ -1,0 +1,47 @@
+@import url('css-reset.css');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+
+html {
+    background-image: Linear-gradient(black, grey, white);
+    color:white;
+    background-repeat: no-repeat;
+    height: 100%;
+
+    font-family: 'Noto Sans';
+    font-size: small;
+    padding: 0;
+}
+
+h1{
+    font-size:3em;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+}
+
+.description{
+    padding: 1%;
+    border: 1px solid white;
+    border-radius: 3px;
+    position: absolute;
+    left: 10%;
+    top: 26%;
+    width: 35%;
+}
+
+/* Sidebar menu icons with transation */
+.menu{
+    position: absolute;
+    width: 40%; height: 10%;
+    top: 80%; left: auto;
+    background-color: red;
+}
+.selected{
+    width: 10%; height: 90%;
+    transition: .2s;
+    border: 1px solid white;
+}
+.am{
+    transition: 0.2s;
+    background: black
+}
