@@ -1,6 +1,744 @@
-<html>
-  <head> Richard CV </head>
-  <body>
-    Hello world this is my first page in github
-  </body>
-</html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Django CHEAT-SHEET</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="be130be5-04fa-4df3-af34-5c6b275dbc77" class="page sans"><header><h1 class="page-title">Django CHEAT-SHEET</h1><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M7.01356 14.0001C8.8042 14.0001 10.5958 13.3107 11.9575 11.9324C14.681 9.21201 14.6808 4.7603 11.9571 2.04013C9.23336 -0.680043 4.77573 -0.680043 2.05199 2.04013C0.727519 3.36277 0 5.13301 0 6.99553C0 8.8764 0.727811 10.6285 2.05199 11.9509C3.43207 13.3106 5.22243 14.0001 7.01356 14.0001ZM3.72947 7.00914V8.461V8.65543H3.92382H5.34563H8.2794H8.4738V8.461V5.52541V3.37947V3.18502H8.2794H6.82747H6.63307V3.37947V6.81467H3.92382H3.72947V7.00914ZM1.83985 6.99553C1.83985 5.61698 2.38099 4.32597 3.36061 3.3477C5.36746 1.34337 8.64803 1.34062 10.6585 3.33944C10.6613 3.34219 10.6639 3.34494 10.6668 3.3477C12.676 5.3546 12.6763 8.63642 10.6668 10.6434C8.65705 12.6504 5.37031 12.6504 3.36061 10.6434C2.38099 9.66506 1.83985 8.37408 1.83985 6.99553Z"></path></svg></span>Created</th><td><time>@June 24, 2022 3:25 PM</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-blue">Work</span></td></tr></tbody></table></header><div class="page-body"><h1 id="e4022e88-f9d0-4769-a020-ab098361facc" class="block-color-blue">Cheet Sheet</h1><h3 id="6be1487c-d7d3-4727-beaa-414789817904" class="">ETIQUETAS Y FILTROS DE PLANTILLA PERSONALIZADAS</h3><p id="77e40bd2-2efe-4e6e-8d75-b5c981f2f9ac" class="">Creamos la carpeta <strong><em>templatetags </em></strong>donde almacenaremos las templates de las etiquetas </p><blockquote id="07b3769d-70ba-4563-8c94-c781314509bb" class="">Django la buscará por defecto como templates(html) y static(css)</blockquote><ul id="877e0bac-2bf4-4119-8fe6-55cf6997048b" class="bulleted-list"><li style="list-style-type:disc">Con <code>__init__().py</code> vacío, convertimos la carpeta en un paquete</li></ul><ul id="702370ea-3c17-4c32-8610-61c4fa0fb9c8" class="bulleted-list"><li style="list-style-type:disc"><code>NameApp_tags.py</code>  importamos la <em>clase template de django </em>y el <em>modelo Projects.</em><blockquote id="dc9e12ed-1b12-4b97-b7c1-dcfff0b4ab54" class="">variable register que almacena la instancia <code>template.Library()</code> , tendrá el registro de todas las etiquetas y filtros que se crean como función</blockquote><blockquote id="736124e3-b880-4662-88af-04193d6f7913" class="">Importación de módulo de la plantilla de la etiqueta <em>(en html)</em>
+<code>{% load NameApp_tags %}</code>
+…</blockquote></li></ul><hr id="bcfc2885-65c1-423a-b463-930838ca10a6"/><p id="7300a8b6-27d6-4930-bc04-c1ca8492d061" class=""><strong>ETIQUETA</strong></p><pre id="f480b19f-87c3-4b7a-8a8a-ef0334d83360" class="code"><code>#Función etiqueta que llamará el html, después de &#x27;load&#x27; el archivo
+
+@register.simple_tag
+def total_projects():
+    return Project.objects.count()</code></pre><p id="0b99c6fe-4c9f-44f0-9e79-2e4744569e29" class=""><em>(en html)</em>
+<code>&lt;p&gt;{% total_projects %}&lt;/p&gt;</code></p><hr id="b4fc1219-436b-42b2-8e44-d59b47ff0892"/><p id="3a13b6a4-a3d1-4fc7-b88c-50a70a55a0cd" class=""><strong>FILTRO</strong></p><pre id="e5d3d6c8-3899-4b21-8481-47ee72f0be98" class="code code-wrap"><code>@register.simple_tag
+def list_projects():
+    return Project.objects.values(&#x27;ID_project&#x27;).distinct()[1:]</code></pre><p id="adeb75be-209f-4e2f-b1f8-439817891189" class=""><em>(en html)
+</em><code><em>{% list_projects as IP_list %}</em></code><em> para iterar los datos, ignora la paginación. Etiqueta de datos. La función es mostrar datos adicionales a los que envía un queryset de una View. Actúa como filtro si creamos la relación a si misma con </em><code><em>href=’?set_request.name = value’</em></code><em> que recuperamos con get en el metodo </em><a href="https://www.notion.so/Django-CHEAT-SHEET-be130be504fa4df3af345c6b275dbc77"><code><em>def get_queryset(self):</em></code></a></p><p id="bf70ea36-62c6-4d4d-9409-404b459b611d" class="">
+</p><h3 id="78a92712-842e-4bb5-9bc4-5fddb18c0796" class="">FILTROS DE PLANTILLA PERSONALIZADOS</h3><p id="38cc6da7-1edd-45b0-aca8-331d4cb14bfc" class="block-color-gray_background"><em>TBD: Markdows format publications</em></p><h3 id="4cfd4bc9-fe04-448f-ab01-c438b0d1353c" class="block-color-brown_background"><details open=""><summary>ℹ GET/POST</summary></details></h3><div class="indented"><p id="b32d30f6-097b-48a4-947d-c8a66d1bf357" class="">GET: petición para obtener contenido web o para realizar petición a una aplicación.
+devuelve un objeto <code>Response</code>, que se ha asignado a la variable <code>resp</code></p><p id="bad3159f-4d6e-409b-bfee-22ea3ecb7353" class="">POST: enviar datos de un formulario desde la Web</p></div><p id="678ea034-e37f-4792-ab51-703f0dfb8be0" class="">
+</p><h3 id="b82c4ac8-aa76-4fee-865f-78f62a33ba33" class="block-color-yellow_background"><em>GET DE UNA VIEW CLASS</em></h3><p id="a5d4f411-73b6-4cf3-a4f3-ad522a629e5a" class="">Método <code>get_queryset(self)</code> petición de vista dentro de ella misma. Podemos capturar del objeto request las variables que pasamos como parámetros, en este caso en concreto <em>linkeamos </em>de la siguiente forma <code>href=”?IP= value”</code>, Django lo interpreta como una petición <span style="border-bottom:0.05em solid"><em>query trim</em></span><em>. </em></p><div id="d0560ba2-e585-45e5-b286-c24c7be1961a" class="column-list"><div id="da3aa7c1-df50-4e5e-aa3e-71f0faa2621f" style="width:68.75%" class="column"><pre id="e6d5e35a-161d-4d1a-9c0a-9bb2968a42bb" class="code code-wrap"><code>def get_queryset(self):
+   IP = self.request.GET.get(&#x27;IP&#x27;)
+   if IP:
+       return Project.objects.filter(ID_project = IP)
+   if IP==None:
+       return Project.objects.all()[1:]</code></pre></div><div id="f4e92baa-0fc8-47b3-811b-72d868dab42e" style="width:31.250000000000007%" class="column"><blockquote id="75f346b2-f6a9-46dd-bdaa-39f3e7165fcc" class="">Capturamos el valor con el nombre correspondiente que aparece en href. Y con condicionales mencionamos la query específica a devolver</blockquote></div></div><hr id="058cd2be-bbbc-4830-908f-5c2be6568baa"/><hr id="5ca2a9ad-6728-4ee8-9afa-f2678bc10f04"/><h3 id="0611a0c8-6bf0-45c1-9ab6-0f7299258da6" class="block-color-blue">FORMULARIOS</h3><ol type="1" id="da00c17e-4b90-4613-b046-f28c18afcbef" class="numbered-list" start="1"><li><em>Creacion de formularios: form.py</em>
+Django predispone clases base para la construcción de formularios basado en modelos Form y <em>ModelForm </em>→ Crear/Editar bajo la carpeta del proyecto <strong>form.py</strong></li></ol><ol type="1" id="f33764b5-bb22-464e-951f-6b3bae871350" class="numbered-list" start="2"><li><em>Se define la clase ModelForm</em><pre id="bb5dea83-7237-42b7-acff-b9bdd88020fd" class="code code-wrap"><code>from .models import Project
+
+class ProjectForm(forms.ModelForm):
+	class Meta:
+		model = Project
+		fields = (&#x27;id&#x27;,&#x27;presentation_key&#x27;,&#x27;ID_project&#x27;,&#x27;IT_programme&#x27;)</code></pre></li></ol><p id="080c1598-07c0-41b8-ab45-80952c5104c6" class="">
+</p><p id="867172a5-903b-458a-8583-66eca8692566" class="block-color-blue">UPDATE FORM OF A MODEL INSTANCE</p><p id="c36c67e0-c8d3-4511-9448-b96781b0acd9" class="">Clase vista donde pasamos la vista genérica <em>UpdateView.</em></p><p id="99d6ca80-7cf9-4788-a671-c11182e6d697" class="">Todos los campos del modelo <code>Project</code> se abren como campos editables en el documento <em><strong>html</strong></em></p><pre id="c24cbb3d-2537-4c1a-b700-e21897226631" class="code code-wrap"><code>class ProjectUpdateView(generic.UpdateView):
+    model = Project
+    fields = &#x27;__all__&#x27;
+    template_name = &#x27;Proyecto1/project_update_form.html&#x27;</code></pre><p id="191d72b1-c582-4019-ad15-c9e386b44c06" class="">URL que identifica el ID del proyecto que pasamos como parámetro (filtra el PRJ en el modelo)</p><pre id="c6aa62e0-00a7-4b2e-8719-6757261a6eda" class="code code-wrap"><code>path(&#x27;&lt;slug:pk&gt;/updateinfo/&#x27;, views.ProjectUpdateView.as_view(), name=&#x27;updateinfo&#x27;),</code></pre><p id="e6a076e7-968d-4025-913d-14bc2a2cdae2" class="">Return un request HTTP Form de tipo <strong><em>UpdateForm</em></strong> (relacionado con los campos del modelo)
+objeto: <code>form</code></p><p id="8d431a22-54be-46be-8fc0-a2aac9425643" class="">llamada al método: <code>form.as_p</code></p><pre id="765dd3c0-e5b0-40d6-8e56-feda6b9d1f11" class="code code-wrap"><code>&lt;form method=&quot;post&quot;&gt; 
+        {% csrf_token %}
+        {{ form.as_p }}
+        &lt;input type=&quot;submit&quot; value=&quot;Update&quot;&gt;
+&lt;/form&gt;</code></pre><p id="0ff49013-5e21-48cf-98b4-4ad5275824e7" class="">
+</p><h3 id="99126eff-de86-40e6-9a48-c9e51ccd7441" class="">PETICIONES HTTP</h3><p id="9cf02ce3-353d-47a0-87b9-967054467b54" class="">Tener en cuenta que las peticiones http son inmutables, por tanto para poder editar sus variables es necesario deshabilitar este parámetro que los configura para poder efectuar cambios. </p><pre id="d9190480-3af1-4183-8c39-0c9e731d0d9e" class="code code-wrap"><code>class ProjectUpdateView(generic.UpdateView):
+    model = Project
+    fields = &#x27;__all__&#x27;
+    template_name = &#x27;Proyecto1/project_update_form.html&#x27;
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+
+        if self.request.POST.get(&#x27;_addanother&#x27;):
+            print(self.object.id)
+            new_PI = Project()
+            self.object.id = new_PI.id
+
+            kwargs[&#x27;pk&#x27;] = str(new_PI.id)
+            request.POST._mutable = True
+            request.POST[&#x27;id&#x27;] = str(new_PI.id)
+            request.POST._mutable = False
+            print(&quot;\n\n\nCreando un objeto nuevo:\n&quot;)
+            #kwargs.update({&#x27;pk&#x27;: None})
+            print(kwargs)
+            print(self.object.id)
+            print(request.POST)
+            print(args)
+
+        return super().post(request, *args, kwargs)</code></pre><h1 id="826eeef3-0ed0-41df-b55f-e3dd2d019951" class="">Despliegue/Creación de Aplicación</h1><ol type="1" id="2f24acfb-0387-4514-9d67-ab8fabec4a7e" class="numbered-list" start="1"><li>Crear Entorno Virtual de Desarrollo
+<code>$ pip install virtualenv
+ $ virtualenv MVE</code></li></ol><ol type="1" id="4c033f53-2c2b-4253-89ef-34b6a38799e4" class="numbered-list" start="2"><li>Entorno adaptar imports utilidades
+<code>$ pip install Django
+ $ pip install pandas
+ $ pip install openpyxl</code>  (Excel archivos edit)
+<code>$ pip install xlsxwriter</code>  (Excel edit formats)
+<code>$pip install uwsgi</code> (uwsgi que hace de intermediario entre aplicación Django )</li></ol><ol type="1" id="e49ff3bd-55b9-4510-978c-09e88e68fbc7" class="numbered-list" start="3"><li>Link Pasos a seguir para instalar un Wsgi controller
+app-name: PMO-RTR
+</li></ol><figure id="f56ee155-6f2d-4d14-bf1a-59f35fd3a64c"><div class="source"><a href="https://montesariel.com/es/blog/post-3">https://montesariel.com/es/blog/post-3</a></div></figure><ol type="1" id="91682afe-1ac9-40ce-9c20-b1f70604bc4a" class="numbered-list" start="4"><li>Aplicaciones para investigar <a href="https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Deployment">implementar </a>para el despliegue de la aplicación web
+Heroku
+WhiteNoise</li></ol><ol type="1" id="b63a337e-ffe1-4f4a-a3da-0fb3ec98b027" class="numbered-list" start="5"><li>Cambios en la exportación de los ficheros, EXPORT NAN VALUES to VACIO
+Columnas S,J,I - valores nan
+Fila Comments - valores nan</li></ol><p id="c8a85a83-26bd-435f-80c3-8cb86a284438" class="">
+</p><h3 id="83843e78-7c4d-4f52-9210-ebc736923c46" class="">WHITENOISE</h3><p id="71be3fba-12a1-478a-8504-dfbcb5a44084" class="">Servir archivos estáticos sin necesidad de usar un servicio externo.</p><div id="4f223d3b-fe10-45dc-a74d-2925cba748e7" class="column-list"><div id="2f7ee11a-e8f4-4ecd-86b3-63b17aadb32e" style="width:50%" class="column"><p id="cafd305c-2454-413c-a654-38e65d78d8d7" class="">Sinergia</p></div><div id="fcb13e95-3d34-4190-a36c-111484cf123b" style="width:50%" class="column"><p id="f6042acf-ba2a-4f87-bc05-2c5a536048e0" class="">Servicios externos</p></div></div><div id="e53ffe5a-bf97-4de4-aa51-75d4d71fd7b6" class="column-list"><div id="00f09959-cb10-40e2-bd5e-d2b5405fc6b7" style="width:50%" class="column"><ul id="3bb7411f-aa48-4b21-a6a3-049e55e19039" class="bulleted-list"><li style="list-style-type:disc">Heroku</li></ul></div><div id="ebfbe331-9b9b-414e-8352-a3adae17eaf4" style="width:50%" class="column"><ul id="b9144960-3a81-4be4-9cb9-2b2d310acae5" class="bulleted-list"><li style="list-style-type:disc">nginx</li></ul></div></div><div id="129a0de9-4073-4dc7-8acc-4a88bb99345a" class="column-list"><div id="c9b63ebc-08aa-448e-ad3a-f85cd90c9d4a" style="width:50%" class="column"><ul id="7c5ac8a2-794a-4f07-94c0-4d4bfd2936b0" class="bulleted-list"><li style="list-style-type:disc">Openshift</li></ul></div><div id="3983ab02-4b87-41d9-84f1-7f19621b4e1f" style="width:50%" class="column"><ul id="dfe0005d-641f-483f-8c8c-b20c17c2b3c0" class="bulleted-list"><li style="list-style-type:disc">Amazon 3</li></ul></div></div><ul id="03537b62-ab7c-444d-9a10-c033ae2e9c41" class="bulleted-list"><li style="list-style-type:disc">Proveedores PaaS</li></ul><h3 id="550bda42-4367-404e-8ddf-ba19d32f5c0d" class=""><mark class="highlight-blue">steps for add statics to a new app</mark></h3><p id="43bd69d0-998d-4fed-b47e-00d0b8d057c4" class="">Documentación de la web oficial de whitenoise - Pasos a seguir para configuración de servicio de <a href="http://whitenoise.evans.io/en/stable/">archivos estaticos</a> </p><ul id="968d6cf4-8c85-499d-a787-2cfa8dc2703b" class="toggle"><li><details open=""><summary>Changes in the path configuration</summary><p id="2825ebc0-34a9-401c-9122-ba12ece31532" class="">Create a <a href="http://wsgi.py">wsgi.py</a> file and fill the fields with the configuration standard</p></details></li></ul><ul id="4626c578-dcbf-4429-a703-12d186b77694" class="toggle"><li><details open=""><summary>Settings my site app</summary><p id="7bb31559-31e8-4002-b964-0b329458e06f" class="">Add list DIRS the directions to static file site</p><p id="7880a9d7-8a9f-404b-85c8-978bad102039" class="">Add list STATICFILES_DIRS and fill the fields with the configuration standard</p><p id="01779f72-c1d0-49ce-9ad1-a4d88223182d" class="">
+</p></details></li></ul><h3 id="7803d2fd-d543-42bc-abba-5f95c590aad3" class="">MODEL SHELL</h3><table id="9b72cbd2-424e-4e9b-b1db-a15b88b9f6aa" class="simple-table"><tbody><tr id="8e134df7-4695-4820-ba03-ea9ef60b9cc5"><td id="H&lt;ha" class=""><code>ModelDaddy[n].modelson_set.all()</code></td><td id="Y&lt;&lt;J" class="">Obtener todos los objetos que comparte foreing key con la tabla hija.</td></tr><tr id="7c80665d-a0e3-4b15-9d9d-40937252be8b"><td id="H&lt;ha" class=""></td><td id="Y&lt;&lt;J" class=""></td></tr></tbody></table><h3 id="656229df-7a5e-41d4-ad53-0d0a8ed46920" class="">ADD APPLICATION</h3><ol type="1" id="91f07130-72e8-4a17-a3b0-93cf77dcfe1d" class="numbered-list" start="1"><li>Creamos los modelos</li></ol><ol type="1" id="8374dafd-3942-44fa-9ab8-a3b412f5a538" class="numbered-list" start="2"><li>Editamos settings del site, donde añadimos la nueva Aplicación</li></ol><ol type="1" id="8b2dff32-a5d7-4c3f-bf79-67a64cbfa5e1" class="numbered-list" start="3"><li>Editamos el admin de la Aplicación</li></ol><ol type="1" id="3e8f6719-5f74-4ee9-b381-cbaf13904a73" class="numbered-list" start="4"><li>Editamos Views y Templates</li></ol><blockquote id="a0fdf3b7-eff3-4f29-b9b3-df3f6a173045" class="">Para conectividad de los modelos con formularios es necesario especificar el objeto clase de forms</blockquote><blockquote id="59e4baea-c0d9-4f12-bfff-38636ea8196f" class="">Notar que para las clases de View podemos tener plantillas de formulario que tengan el mismo formato, o formularios básicos como Create a new element (template form, con todos los campos a rellenar)</blockquote><p id="03117662-458f-4003-9ee5-f691dfa45b48" class="">
+</p><p id="7dff90be-8166-47ce-a37e-1f2121576787" class="">
+</p><h1 id="ae32dba9-3cd9-4ae6-928e-27b1e0fb67ee" class="">Library</h1><ol type="1" id="6e30a93f-f889-4197-b147-93a18280e10a" class="numbered-list" start="1"><li><a href="https://docs.djangoproject.com/en/4.1/ref/templates/builtins/">Template tags in html</a></li></ol></div></article></body></html>
