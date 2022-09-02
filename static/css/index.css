@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 
 html {
-    background-image: Linear-gradient(black, grey, white);
+    background-image: Linear-gradient(rgb(16, 24, 73), grey, white);
     color:white;
     background-repeat: no-repeat;
     height: 100%;
@@ -31,17 +31,64 @@ h1{
 
 /* Sidebar menu icons with transation */
 .menu{
-    position: absolute;
-    width: 40%; height: 10%;
+    height: 500px; 
     top: 80%; left: auto;
-    background-color: red;
 }
 .selected{
-    width: 10%; height: 90%;
-    transition: .2s;
-    border: 1px solid white;
+    margin: auto;
+    width: 30%; height: 90%;
+    border: 3px solid white;
+
 }
-.am{
-    transition: 0.2s;
-    background: black
+.aboutme{
+    transition: 0.5s;
+    transition: .6s cubic-bezier(0.39, 0.575, 0.565, 1);
+    background-image: url(icons8-acerca-de-mí-hombre-100.png);
 }
+
+
+.part-1{
+    position: relative;
+    width: 50%; height: 34%;
+    top: 0%; left: 0%;
+    border-top-left-radius: 2px;
+}
+.part-2{
+    position: relative;
+    width: 50%; height: 40%;
+    left: 50%; top: -34%;
+    border-top-right-radius: 2px;
+    background-color: orange;
+}
+.part-3{
+    position: relative;
+    width: 50%; height: 25%;
+    top: -40%; left: 0%;
+    background-color: wheat;
+    
+}
+.part-4{
+    position: relative;
+    width: 50%; height: 41%;
+    top: -40%; left: 0%;
+    border-bottom-left-radius: 2px;
+    background-color: aqua;
+
+}
+.part-5{
+    position: relative;
+    width: 50%; height: 60%;
+    left: 50% ;top: -100%;
+    border-bottom-right-radius: 2px;
+    background-color: brown;
+}
+
+.selected:hover .part-1{transform: translate(-10px, -100px); opacity: 0;}
+.selected:hover .part-2{transform: translate(30px, -70px); opacity: 0;}
+.selected:hover .part-3{transform: translate(-30px, 10px); opacity: 0;}
+.selected:hover .part-4{transform: translate(-30px, 70px); opacity: 0;}
+.selected:hover .part-5{transform: translate(30px, 70px); opacity: 0;}
+
+
+
+
