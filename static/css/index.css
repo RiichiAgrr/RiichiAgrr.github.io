@@ -17,6 +17,7 @@ h1{
     position: absolute;
     left: 10%;
     top: 10%;
+    background-image: url('https://github.com/RiichiAgrr/riichiagrr.github.io/blob/main/static/img/icons8-acerca-de-m%C3%AD-hombre-100.png');
 }
 
 .description{
@@ -43,7 +44,7 @@ h1{
 .aboutme{
     transition: 0.5s;
     transition: .6s cubic-bezier(0.39, 0.575, 0.565, 1);
-    background-image: url(icons8-acerca-de-mí-hombre-100.png);
+    background-image: url("https://github.com/RiichiAgrr/riichiagrr.github.io/blob/main/static/img/icons8-acerca-de-m%C3%AD-hombre-100.png");
 }
 
 
