@@ -38,7 +38,7 @@ h1{
     margin: auto;
     width: 30%; height: 90%;
     border: 3px solid white;
-
+    background-image: url(https://github.com/RiichiAgrr/riichiagrr.github.io/blob/main/static/img/icons8-acerca-de-m%C3%AD-hombre-100.png);
 }
 .aboutme{
     transition: 0.5s;
