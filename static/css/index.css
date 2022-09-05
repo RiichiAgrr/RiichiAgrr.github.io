@@ -1,129 +1,80 @@
+<!DOCTYPE html>
 
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+<html>
+    <head> 
+        <title> Personal Portfolio </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="static/css/index.css">
+    </head>
 
-html {
-    background-image: url("../img/pexels-life-of-pix-7919.jpg");
-    color:white;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
+    <body>
+        <h1> Richard Aguirre </h1>
 
-    font-family: 'Noto Sans';
-    font-size: small;
-    padding: 0;
-}
+        <div class="description">
+            <h3> Big data analyst / Data Science / Junior Python Developer </h3>
+            <p>
+                Technology and Telecommunications Engineer at the Carlos III University of Madrid. 
+                With almost 3 years of experience in consulting sector and big data analysis. 
+                I consider myself a proactive, responsible person, love travelling, sports and keep learning in the world of programming and technology.
+            </p>
+        </div>
+        <p class="web-links">
+            <a href="" target="blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/devto.svg" alt="c" height="18" width="24" /></a>
+            <a href="" target="blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="d" height="18" width="24" /></a>
+            <a href="https://www.linkedin.com/in/richard-aguirre-hungria-uc3mtelecom/" target="blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="a" height="18" width="24" /></a>
+            <a href="" target="blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="e" height="18" width="24" /></a>
+        </p>
 
-h1{
-    font-size:4.5em;
-    position: absolute;
-    left: 5%; top: 10%;
-    text-transform: uppercase;
-    text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.541);
-}
+        <div class="menu">
+            <div class="selected s1">
+                <div class="aboutme part-1"></div>
+                <div class="aboutme part-2"></div>
+                <div class="aboutme part-3"></div>
+                <div class="aboutme part-4"></div>
+                <div class="aboutme part-5"></div>
+                <span class="title"> More about me</span>
+            </div>
 
-.description{
-    padding: 1%;
-    border: 1px solid white;
-    border-radius: 3px;
-    position: absolute;
-    left: 7%;
-    top: 27%;
-    width: 35%;
+            <div class="selected s2">
+                <div class="kwn-a-xp part-1"></div>
+                <div class="kwn-a-xp part-2"></div>
+                <div class="kwn-a-xp part-3"></div>
+                <div class="kwn-a-xp part-4"></div>
+                <div class="kwn-a-xp part-5"></div>
+                <span class="title"> Knowledge and experience</span>
+            </div>
 
-    background-color: rgba(0, 0, 0, 0.288);
-    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.507);
-}
+            <div class="selected s3">
+                <div class="dwn-cv part-1"></div>
+                <div class="dwn-cv part-2"></div>
+                <div class="dwn-cv part-3"></div>
+                <div class="dwn-cv part-4"></div>
+                <div class="dwn-cv part-5"></div>
+                <span class="title"> Download CV </span>
+            </div>
 
-/* Sidebar menu icons with transation */
-.menu{
-    position: absolute;
-    left: 50%; top: 50%;
-    transform: translate(0, -50%);
-    width: 45%; height: 70%;
+            <div class="selected s4">
+                <div class="blog part-1"></div>
+                <div class="blog part-2"></div>
+                <div class="blog part-3"></div>
+                <div class="blog part-4"></div>
+                <div class="blog part-5"></div>
+                <span class="title"> Personal Blog </span>
+            </div>
 
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 10px;
-    padding: 10px;
-}
-.selected{
-    margin: auto;
-    width: 100px; height: 100px;
-    border-radius: 50%; 
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.438); 
-    padding: 1em;
-}
-.s1{grid-column: 2;}
-.s2{grid-column: 1;}
-.s3{grid-column: 3;}
-.s4{grid-column: 2;}
+        </div>
 
-.aboutme, .kwn-a-xp , .dwn-cv, .blog{
-    background-repeat: no-repeat;
-    transition: 0.5s;
-    transition: .6s cubic-bezier(0.39, 0.575, 0.565, 1);
-}
 
-.aboutme{background-image: url('../img/icons8-acerca-de-mí-hombre-100.png');}
-.kwn-a-xp{background-image: url('../img/icons8-educación-100.png');}
-.dwn-cv{ background-image: url('../img/icons8-currículum-100.png');}
-.blog{background-image: url('../img/icons8-películas-portal-100.png');}
+        <!-- Growing up in web development with django -->
+        <!-- Growing up in automatization of process with python -->
+        <!-- Groping up in Linux, Docker and Kubernetes -->
 
-.part-1{
-    position: relative;
-    width: 50%; height: 34%;
-    top: 0%; left: 0%;
-}
-.part-2{
-    position: relative;
-    width: 50%; height: 40%;
-    left: 50%; top: -34%;
-    background-position: -50px 0;
-}
-.part-3{
-    position: relative;
-    width: 50%; height: 25%;
-    top: -40%; left: 0%;
-    background-position: 0 -34px;
-}
-.part-4{
-    position: relative;
-    width: 50%; height: 41%;
-    top: -40%; left: 0%;
-    background-position: 0 -59px;
-
-}
-.part-5{
-    position: relative;
-    width: 50%; height: 60%;
-    left: 50% ;top: -100%;
-    background-position: -50px -40px;
-}
-.title{
-    position: relative;
-    top: -160%; left: -5%;
-    transition: .6s cubic-bezier(0.23, 1, 0.320, 1);
-    white-space: nowrap;
-    opacity: 0;
-}
-
-.selected:hover .part-1{transform: translate(-10px, -100px); opacity: 0;}
-.selected:hover .part-2{transform: translate(30px, -70px); opacity: 0;}
-.selected:hover .part-3{transform: translate(-30px, 10px); opacity: 0;}
-.selected:hover .part-4{transform: translate(-30px, 70px); opacity: 0;}
-.selected:hover .part-5{transform: translate(30px, 70px); opacity: 0;}
-.selected:hover .title{
-    color: white; opacity: 1; 
-    font-size: 1.4em; 
-    text-shadow: 1px 1px 5px black; 
-    border: 1px solid white;
-    white-space: nowrap;
-    padding: 0.25em 0.4em;
-    border-radius: 2px;
-    padding: 0.9em 0.8em;
-    box-shadow: 1px 1px 15px rgba(255, 255, 255, 0.5);
-}
-.selected:hover{
-    width: auto;
-    box-shadow: none;
-}
+        <!-- Recently Skills adquire:
+                ETL, Extract, transformation and load of data with PowerQuery and DAX lenguages that provide Power BI (level advance)
+                "", with pandas of python
+                Elaborating SQL scripts in mySQL database
+                Learn use Jira software for managment of projects, developments and incidents
+        -->             
+            
+    </body>
+</html>
