@@ -1,10 +1,11 @@
-@import url('css-reset.css');
+
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 
 html {
-    background-image: Linear-gradient(rgb(16, 24, 73), grey, white);
+    background-image: url("../img/pexels-life-of-pix-7919.jpg");
     color:white;
     background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
 
     font-family: 'Noto Sans';
@@ -13,11 +14,11 @@ html {
 }
 
 h1{
-    font-size:3em;
+    font-size:4.5em;
     position: absolute;
-    left: 10%;
-    top: 10%;
-    background-image: url('https://github.com/RiichiAgrr/riichiagrr.github.io/blob/main/static/img/icons8-acerca-de-m%C3%AD-hombre-100.png');
+    left: 5%; top: 10%;
+    text-transform: uppercase;
+    text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.541);
 }
 
 .description{
@@ -25,63 +26,85 @@ h1{
     border: 1px solid white;
     border-radius: 3px;
     position: absolute;
-    left: 10%;
-    top: 26%;
+    left: 7%;
+    top: 27%;
     width: 35%;
+
+    background-color: rgba(0, 0, 0, 0.288);
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.507);
 }
 
 /* Sidebar menu icons with transation */
 .menu{
-    height: 500px; 
-    top: 80%; left: auto;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(0, -50%);
+    width: 45%; height: 70%;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    padding: 10px;
 }
 .selected{
     margin: auto;
-    width: 30%; height: 90%;
-    border: 3px solid white;
-    background-image: url('https://github.com/RiichiAgrr/riichiagrr.github.io/blob/main/static/img/icons8-acerca-de-m%C3%AD-hombre-100.png');
+    width: 100px; height: 100px;
+    border-radius: 50%; 
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.438); 
+    padding: 1em;
 }
-.aboutme{
+.s1{grid-column: 2;}
+.s2{grid-column: 1;}
+.s3{grid-column: 3;}
+.s4{grid-column: 2;}
+
+.aboutme, .kwn-a-xp , .dwn-cv, .blog{
+    background-repeat: no-repeat;
     transition: 0.5s;
     transition: .6s cubic-bezier(0.39, 0.575, 0.565, 1);
-    background-image: url("https://github.com/RiichiAgrr/riichiagrr.github.io/blob/main/static/img/icons8-acerca-de-m%C3%AD-hombre-100.png");
 }
 
+.aboutme{background-image: url('../img/icons8-acerca-de-mí-hombre-100.png');}
+.kwn-a-xp{background-image: url('../img/icons8-educación-100.png');}
+.dwn-cv{ background-image: url('../img/icons8-currículum-100.png');}
+.blog{background-image: url('../img/icons8-películas-portal-100.png');}
 
 .part-1{
     position: relative;
     width: 50%; height: 34%;
     top: 0%; left: 0%;
-    border-top-left-radius: 2px;
 }
 .part-2{
     position: relative;
     width: 50%; height: 40%;
     left: 50%; top: -34%;
-    border-top-right-radius: 2px;
-    background-color: orange;
+    background-position: -50px 0;
 }
 .part-3{
     position: relative;
     width: 50%; height: 25%;
     top: -40%; left: 0%;
-    background-color: wheat;
-    
+    background-position: 0 -34px;
 }
 .part-4{
     position: relative;
     width: 50%; height: 41%;
     top: -40%; left: 0%;
-    border-bottom-left-radius: 2px;
-    background-color: aqua;
+    background-position: 0 -59px;
 
 }
 .part-5{
     position: relative;
     width: 50%; height: 60%;
     left: 50% ;top: -100%;
-    border-bottom-right-radius: 2px;
-    background-color: brown;
+    background-position: -50px -40px;
+}
+.title{
+    position: relative;
+    top: -160%; left: -5%;
+    transition: .6s cubic-bezier(0.23, 1, 0.320, 1);
+    white-space: nowrap;
+    opacity: 0;
 }
 
 .selected:hover .part-1{transform: translate(-10px, -100px); opacity: 0;}
@@ -89,7 +112,18 @@ h1{
 .selected:hover .part-3{transform: translate(-30px, 10px); opacity: 0;}
 .selected:hover .part-4{transform: translate(-30px, 70px); opacity: 0;}
 .selected:hover .part-5{transform: translate(30px, 70px); opacity: 0;}
-
-
-
-
+.selected:hover .title{
+    color: white; opacity: 1; 
+    font-size: 1.4em; 
+    text-shadow: 1px 1px 5px black; 
+    border: 1px solid white;
+    white-space: nowrap;
+    padding: 0.25em 0.4em;
+    border-radius: 2px;
+    padding: 0.9em 0.8em;
+    box-shadow: 1px 1px 15px rgba(255, 255, 255, 0.5);
+}
+.selected:hover{
+    width: auto;
+    box-shadow: none;
+}
