@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 
 html {
@@ -16,7 +17,7 @@ h1{
     font-size:4.5em;
     position: absolute;
     left: 9%; top: 15%;
-    text-transform: uppercase;
+
     text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.541);
 }
 

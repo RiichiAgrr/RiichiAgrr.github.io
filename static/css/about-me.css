@@ -1,0 +1,65 @@
+.pre-btn, .nxt-btn{ 
+    clip-path: polygon(25% 20%, 75% 45%, 75% 55%, 25% 75%, 25% 65%, 60% 50%, 25% 30%,25% 20%);
+
+    width: 10vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    background-size: 64px 64px;
+    cursor: pointer;
+    z-index: 8;
+    opacity: 0.2;
+}
+.pre-btn{ left:0; transform: rotate(-180deg);}
+.nxt-btn{ right: 0;}
+
+.pre-btn:hover , .nxt-btn:hover{ 
+    opacity: 1;
+}
+
+.works-container::-webkit-scrollbar {
+    display: none;
+  }
+.works-container{
+    padding: 0 10vw;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+.mn-slider{
+    position: relative;
+    overflow:  hidden;
+    padding: 20px;
+    top: 60px;
+}
+.works:nth-child(3) {
+    grid-column: span 2;
+    margin-bottom: 10px;
+  }
+
+.workinfo{
+    flex: 0 0 auto;
+    width: 100%;
+    height: 450px;
+    margin-right: 300px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.425) ;
+}
+
+.workinfo h3,p{
+    margin: 10px 50px;
+}
+.workinfo h3{
+    display: flex;
+    align-items: center;
+}
+.workDescription{
+    margin-top: 120px;
+}
+h2{
+    padding-bottom: 4%;
+    text-align: center;
+}

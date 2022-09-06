@@ -1,0 +1,71 @@
+.list ul{
+    list-style-type: none;
+}
+
+.list{position: absolute;}
+.list h3, .list ul{ padding: 0px 20px;}
+
+.courses, .skills{
+    left: 65%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.411);
+}
+.skills{ top:50%;}
+.courses{ top: 100px;}
+.lenguages{ box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.411); top:50%; left: 81.5%;}
+
+.img{
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+.icon-skills{
+    background-image: url("https://images.pexels.com/photos/2873277/pexels-photo-2873277.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    height: 100px; width: 100%;
+}
+.icon-courses{
+    background-image: url("https://images.pexels.com/photos/4443160/pexels-photo-4443160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    height: 100px; width: 100%;
+}
+.icon-academic{
+    background-image: url("https://images.pexels.com/photos/3825462/pexels-photo-3825462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    height: 150px; width: 100%;
+}
+.icon-languages{
+    background-image: url("https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    height: 140px; width: 100%;
+}
+.icon-growing{
+    background-image: url("https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    height: 185px; width: 100%;
+}
+.icon-recently{
+    background-image: url("https://images.pexels.com/photos/879109/pexels-photo-879109.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    height: 120px; width: 100%;
+    background-position: 0 -100px;
+}
+.academic{
+    width: 56%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.411);
+    left: 5%; top: 100px;
+}
+
+
+.growing{
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.411);
+    top:58%; left: 41%; width: 20%;
+}
+.recently{
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.411);
+    top:58%; width: 35%; left: 5%;
+}
+
+.growing ul li p, .recently ul li p{
+    box-shadow: -1.5px 0px 0px grey;
+    padding-left: 3px;
+}
+
+
+h3{
+    margin: 0 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.459);
+}
