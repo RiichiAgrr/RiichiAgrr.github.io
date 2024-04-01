@@ -7,7 +7,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
-
+    
     font-family: 'Noto Sans';
     font-size: small;
     padding: 0;
@@ -17,7 +17,7 @@ h1{
     font-size:4.5em;
     position: absolute;
     left: 9%; top: 15%;
-    text-transform: capitalize;
+    text-transform: uppercase;
     padding-left: 20px;
     text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.541);
 }
